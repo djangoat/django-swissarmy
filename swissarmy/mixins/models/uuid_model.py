@@ -41,8 +41,9 @@ class UidModelMixin(models.Model):
         """
         try:
             uid = Hashids(
-                salt=settings.SECRET_KEY,
-                min_length=4,
+                salt=settings.UID_FIELD_SALT,
+                min_length=settings.UID_HASH_MIN_LENGTH,
+                alphabet=settings.UID_HASH_ALPHABET,
             ).encode(self.pk)
         except TypeError:
             uid = str(self.pk)
