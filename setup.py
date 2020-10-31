@@ -11,6 +11,9 @@ setup(
     author='Djangoat',
     packages=find_packages(),
     include_package_data=True,
+    install_requires=[
+        'hashids>=1.3,<1.4',
+    ],
     classifiers=[
         'Development Status :: 2 - Beta',
         'Intended Audience :: Developers',
