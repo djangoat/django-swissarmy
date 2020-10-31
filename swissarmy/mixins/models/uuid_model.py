@@ -20,6 +20,7 @@ class UidModelMixin(models.Model):
     )
     uid = models.CharField(
         max_length=255,
+        editable=False,
         unique=True,
     )
 
